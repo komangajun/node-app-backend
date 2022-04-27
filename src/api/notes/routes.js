@@ -1,17 +1,22 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable quotes */
+
 const routes = (handler) => [
     {
         method: 'POST',
         path: '/notes',
         handler: handler.postNoteHandler, 
       },
-  
+
       {
           method: 'GET',
           path: '/notes',
           handler: handler.getNotesHandler,
         },
-  
-        {
+
+      {
           method: 'GET',
           path: '/notes/{id}',
           handler: handler.getNoteByIdHandler,

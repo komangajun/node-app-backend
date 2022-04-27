@@ -1,14 +1,14 @@
 /* eslint-disable linebreak-style */
-const { NotePayloadSchema } = require('./schema');
 const InvariantError = require('../../exceptions/InvariantError');
+const { UserPayloadSchema } = require('./schema');
 
-const NotesValidator = {
-  validateNotePayload: (payload) => {
-    const validationResult = NotePayloadSchema.validate(payload);
+const UsersValidator = {
+  validateUserPayload: (payload) => {
+    const validationResult = UserPayloadSchema.validate(payload);
     if (validationResult.error) {
       throw new InvariantError(validationResult.error.message);
     }
   },
 };
 
-module.exports = NotesValidator;
+module.exports = UsersValidator;

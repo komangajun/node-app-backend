@@ -1,3 +1,9 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable quotes */
+/* eslint-disable eol-last */
+
 const ClientError = require('./ClientError');
  
 class InvariantError extends ClientError {
