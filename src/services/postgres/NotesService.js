@@ -72,12 +72,17 @@ class NotesService {
     };
 
     const result = await this._pool.query(query);
-    if (!result.rows.length) {
+
+    if (!result.rowCount) {
       throw new NotFoundError('Catatan tidak ditemukan');
     }
+
     const note = result.rows[0];
+
     if (note.owner !== owner) {
-      throw new AuthorizationError('Anda tidak berhak mengakses resource ini');
+      throw new AuthorizationError(
+        'Anda tidak berhak mengakses resource ini',
+      );
     }
   }
 
